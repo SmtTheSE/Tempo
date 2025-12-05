@@ -12,7 +12,7 @@ const tours = [
     rating: 4.9,
     reviews: 156,
     highlights: ['Snorkeling equipment included', 'Professional guide', 'Lunch & refreshments', 'Photo opportunities'],
-    image: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
+    image: '/images/sunset.jpg'
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const tours = [
     rating: 4.8,
     reviews: 203,
     highlights: ['Welcome drinks', 'Live music', 'Sunset photography', 'Onboard dining'],
-    image: '/src/sunset.jpg'
+    image: '/images/sunset.jpg'
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const tours = [
     rating: 5.0,
     reviews: 89,
     highlights: ['PADI certified instructors', 'All equipment provided', 'Safety briefing', 'Underwater photos'],
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
+    image: '/images/sunset.jpg'
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const tours = [
     rating: 4.7,
     reviews: 312,
     highlights: ['Private beach area', 'Complimentary drinks', 'Beach activities', 'Changing facilities'],
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
+    image: '/images/sunset.jpg'
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const tours = [
     rating: 4.9,
     reviews: 178,
     highlights: ['Multiple activities', 'Safety equipment', 'Experienced operators', 'Action photos'],
-    image: '/src/Water-activities-6-1.png'
+    image: '/images/Water-activities-6-1.png'
   },
   {
     id: 6,
@@ -77,7 +77,7 @@ const tours = [
     rating: 4.6,
     reviews: 94,
     highlights: ['Fishing equipment', 'Local guide', 'Fresh seafood meal', 'Cultural experience'],
-    image: '/src/positano-fishing-experience-2.jpg'
+    image: '/images/positano-fishing-experience-2.jpg'
   }
 ];
 
