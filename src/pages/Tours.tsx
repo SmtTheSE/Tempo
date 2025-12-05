@@ -12,7 +12,7 @@ const tours = [
     rating: 4.9,
     reviews: 156,
     highlights: ['Snorkeling equipment included', 'Professional guide', 'Lunch & refreshments', 'Photo opportunities'],
-    image: '/images/sunset.jpg'
+    image: '/dist/images/hon-ba-7.jpg'
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const tours = [
     rating: 5.0,
     reviews: 89,
     highlights: ['PADI certified instructors', 'All equipment provided', 'Safety briefing', 'Underwater photos'],
-    image: '/images/sunset.jpg'
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ const tours = [
     rating: 4.7,
     reviews: 312,
     highlights: ['Private beach area', 'Complimentary drinks', 'Beach activities', 'Changing facilities'],
-    image: '/images/sunset.jpg'
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 5,
