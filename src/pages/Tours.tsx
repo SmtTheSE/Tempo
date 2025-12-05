@@ -12,7 +12,7 @@ const tours = [
     rating: 4.9,
     reviews: 156,
     highlights: ['Snorkeling equipment included', 'Professional guide', 'Lunch & refreshments', 'Photo opportunities'],
-    image: '/dist/images/hon-ba-7.jpg'
+    image: '/images/sunset.jpg'
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const tours = [
     rating: 4.8,
     reviews: 203,
     highlights: ['Welcome drinks', 'Live music', 'Sunset photography', 'Onboard dining'],
-    image: '/images/sunset.jpg'
+    image: 'https://images.unsplash.com/photo-1551543424-0763c6d08bd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 3,
