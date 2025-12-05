@@ -1,3 +1,97 @@
+# Marina Travel - Website Design Development Final Project
+
+A modern, responsive website for Marina Travel, an ocean tourism company based in Vung Tau, Vietnam. Built with React, TypeScript, and Tailwind CSS, featuring an Apple-inspired design aesthetic.
+
+## Features
+
+- **Apple-Inspired Design**: Clean, minimalist interface with ample whitespace and elegant typography
+- **Responsive Layout**: Fully responsive design that works on all device sizes
+- **Interactive Elements**: Animated hero section, tour cards, and contact form
+- **Google Maps Integration**: Embedded map showing the company's location in Vung Tau
+- **SPA Routing**: Single-page application with React Router for smooth navigation
+- **Contact Form**: Functional contact form with Supabase backend integration
+
+## Technologies Used
+
+- React with TypeScript
+- Tailwind CSS for styling
+- React Router for navigation
+- Lucide React for icons
+- Supabase for backend services
+- Vite for build tooling
+
+## Pages
+
+1. **Home** - Hero section with call-to-action buttons
+2. **About** - Company story, mission, vision, and values
+3. **Tours** - Tour listings with images and details
+4. **Contact** - Contact form and company information with Google Maps
+5. **Game** - Interactive ocean knowledge quiz
+
+## Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file based on `.env.example` and add your Supabase credentials
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Deployment
+
+Refer to [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions on deploying to Netlify.
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Footer.tsx
+│   └── Navigation.tsx
+├── lib/
+│   └── supabase.ts
+├── pages/
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Game.tsx
+│   ├── Home.tsx
+│   └── Tours.tsx
+├── App.tsx
+├── index.css
+└── main.tsx
+```
+
+## Design Principles
+
+- **Apple-Inspired Aesthetic**: Minimalist design with clean lines, ample whitespace, and subtle animations
+- **Typography**: Uses Inter font as a substitute for SF Pro with proper fallbacks
+- **Color Scheme**: Clean, light color palette with blue accents representing the ocean
+- **Imagery**: High-quality images from Unsplash for visual impact
+- **Responsive Design**: Mobile-first approach with breakpoints for all device sizes
+
+## Contributing
+
+This project was created as part of an educational assignment. Feel free to fork and modify for your own learning purposes.
+
+## License
+
+This project is for educational purposes only.
+
 # Marina Travel - Ocean Adventures Website
 
 A professional tourism website built for Unit 13: Website Design & Development assignment. This project demonstrates modern web development techniques, database integration, and interactive user experiences.
