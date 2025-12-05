@@ -11,7 +11,8 @@ const tours = [
     location: 'Con Dao Islands',
     rating: 4.9,
     reviews: 156,
-    highlights: ['Snorkeling equipment included', 'Professional guide', 'Lunch & refreshments', 'Photo opportunities']
+    highlights: ['Snorkeling equipment included', 'Professional guide', 'Lunch & refreshments', 'Photo opportunities'],
+    image: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ const tours = [
     location: 'Vung Tau Bay',
     rating: 4.8,
     reviews: 203,
-    highlights: ['Welcome drinks', 'Live music', 'Sunset photography', 'Onboard dining']
+    highlights: ['Welcome drinks', 'Live music', 'Sunset photography', 'Onboard dining'],
+    image: '/src/sunset.jpg'
   },
   {
     id: 3,
@@ -35,7 +37,8 @@ const tours = [
     location: 'Hon Cau',
     rating: 5.0,
     reviews: 89,
-    highlights: ['PADI certified instructors', 'All equipment provided', 'Safety briefing', 'Underwater photos']
+    highlights: ['PADI certified instructors', 'All equipment provided', 'Safety briefing', 'Underwater photos'],
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 4,
@@ -47,7 +50,8 @@ const tours = [
     location: 'Long Hai Beach',
     rating: 4.7,
     reviews: 312,
-    highlights: ['Private beach area', 'Complimentary drinks', 'Beach activities', 'Changing facilities']
+    highlights: ['Private beach area', 'Complimentary drinks', 'Beach activities', 'Changing facilities'],
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 5,
@@ -59,7 +63,8 @@ const tours = [
     location: 'Back Beach',
     rating: 4.9,
     reviews: 178,
-    highlights: ['Multiple activities', 'Safety equipment', 'Experienced operators', 'Action photos']
+    highlights: ['Multiple activities', 'Safety equipment', 'Experienced operators', 'Action photos'],
+    image: '/src/Water-activities-6-1.png'
   },
   {
     id: 6,
@@ -71,17 +76,18 @@ const tours = [
     location: 'Open Sea',
     rating: 4.6,
     reviews: 94,
-    highlights: ['Fishing equipment', 'Local guide', 'Fresh seafood meal', 'Cultural experience']
+    highlights: ['Fishing equipment', 'Local guide', 'Fresh seafood meal', 'Cultural experience'],
+    image: '/src/positano-fishing-experience-2.jpg'
   }
 ];
 
 export default function Tours() {
   return (
-    <section id="tours" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="section-padding bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Tours & Experiences</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Tours & Experiences</h2>
+          <p className="text-xl text-accent max-w-3xl mx-auto">
             Choose from our carefully curated selection of ocean adventures designed for every type of traveler
           </p>
         </div>
@@ -90,13 +96,15 @@ export default function Tours() {
           {tours.map((tour) => (
             <div
               key={tour.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 flex flex-col"
+              className="apple-card flex flex-col"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-cyan-500 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <MapPin className="h-20 w-20 text-white opacity-50" />
-                </div>
-                <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 flex items-center gap-1">
+              <div className="h-48 relative overflow-hidden rounded-t-2xl">
+                <img 
+                  src={tour.image} 
+                  alt={tour.title} 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 flex items-center gap-1 shadow-apple">
                   <Star className="h-4 w-4 text-yellow-400 fill-current" />
                   <span className="font-semibold text-sm">{tour.rating}</span>
                   <span className="text-gray-500 text-sm">({tour.reviews})</span>
@@ -104,27 +112,27 @@ export default function Tours() {
               </div>
 
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tour.title}</h3>
-                <p className="text-gray-600 mb-4 flex-1">{tour.description}</p>
+                <h3 className="text-2xl font-bold text-primary mb-2">{tour.title}</h3>
+                <p className="text-accent mb-4 flex-1">{tour.description}</p>
 
-                <div className="space-y-2 mb-4 text-sm text-gray-600">
+                <div className="space-y-2 mb-4 text-sm text-accent">
                   <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 text-blue-600" />
+                    <Clock className="h-4 w-4 text-primary" />
                     <span>{tour.duration}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-blue-600" />
+                    <Users className="h-4 w-4 text-primary" />
                     <span>{tour.groupSize}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-blue-600" />
+                    <MapPin className="h-4 w-4 text-primary" />
                     <span>{tour.location}</span>
                   </div>
                 </div>
 
-                <div className="border-t pt-4 mb-4">
-                  <p className="text-sm font-semibold text-gray-700 mb-2">Tour Highlights:</p>
-                  <ul className="grid grid-cols-2 gap-2 text-xs text-gray-600">
+                <div className="border-t border-border pt-4 mb-4">
+                  <p className="text-sm font-semibold text-primary mb-2">Tour Highlights:</p>
+                  <ul className="grid grid-cols-2 gap-2 text-xs text-accent">
                     {tour.highlights.map((highlight, index) => (
                       <li key={index} className="flex items-start gap-1">
                         <span className="text-green-500 mt-0.5">✓</span>
@@ -134,48 +142,37 @@ export default function Tours() {
                   </ul>
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t">
+                <div className="flex items-center justify-between pt-4 border-t border-border">
                   <div>
-                    <p className="text-sm text-gray-500">From</p>
-                    <p className="text-2xl font-bold text-blue-600">{tour.price} VND</p>
+                    <p className="text-sm text-accent">From</p>
+                    <p className="text-2xl font-bold text-primary">{tour.price} VND</p>
                   </div>
-                  <button
-                    onClick={() => {
-                      const contactSection = document.querySelector('#contact');
-                      if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: 'smooth' });
-                        setTimeout(() => {
-                          const serviceSelect = document.querySelector('select[name="service_interest"]') as HTMLSelectElement;
-                          if (serviceSelect) {
-                            serviceSelect.value = tour.title;
-                          }
-                        }, 500);
-                      }
-                    }}
-                    className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center gap-2"
+                  <a
+                    href="/contact"
+                    className="apple-btn flex items-center gap-2"
                   >
                     Book Now
                     <Calendar className="h-4 w-4" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Can't find what you're looking for?</h3>
-          <p className="text-gray-600 mb-6">
+        <div className="mt-16 apple-card p-8 text-center">
+          <h3 className="text-2xl font-bold text-primary mb-4">Can't find what you're looking for?</h3>
+          <p className="text-accent mb-6">
             We offer custom tour packages tailored to your preferences. Contact us to create your perfect ocean adventure.
           </p>
-          <button
-            onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105"
+          <a
+            href="/contact"
+            className="apple-btn"
           >
             Request Custom Tour
-          </button>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -8,17 +9,21 @@ import Game from './pages/Game';
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <Home />
-        <About />
-        <Tours />
-        <Contact />
-        <Game />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Navigation />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/tours" element={<Tours />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/game" element={<Game />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

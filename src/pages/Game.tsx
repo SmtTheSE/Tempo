@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Fish, Trophy, RotateCcw, Star } from 'lucide-react';
+import { Fish, Trophy, RotateCcw, Star, Brain } from 'lucide-react';
 
 type Question = {
   id: number;
@@ -114,57 +114,57 @@ export default function Game() {
 
   if (gameComplete) {
     return (
-      <section id="game" className="py-20 bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-400">
+      <div className="section-padding bg-secondary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center">
+          <div className="apple-card p-8 md:p-12 text-center">
             <Trophy className="h-20 w-20 text-yellow-500 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Quiz Complete!</h2>
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 mb-6">
-              <p className="text-6xl font-bold text-blue-600 mb-2">{score}/{quizQuestions.length}</p>
-              <p className="text-xl text-gray-700">{getScoreMessage()}</p>
+            <h2 className="text-4xl font-bold text-primary mb-4">Quiz Complete!</h2>
+            <div className="bg-secondary rounded-2xl p-8 mb-6">
+              <p className="text-6xl font-bold text-primary mb-2">{score}/{quizQuestions.length}</p>
+              <p className="text-xl text-accent">{getScoreMessage()}</p>
             </div>
-            <p className="text-gray-600 mb-8 text-lg">
+            <p className="text-accent mb-8 text-lg">
               Thank you for testing your ocean knowledge! Every question answered helps spread awareness about marine conservation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={restartGame}
-                className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                className="apple-btn flex items-center justify-center gap-2"
               >
                 <RotateCcw className="h-5 w-5" />
                 Play Again
               </button>
-              <button
-                onClick={() => document.querySelector('#tours')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-white border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all"
+              <a
+                href="/tours"
+                className="apple-btn-secondary"
               >
                 Explore Tours
-              </button>
+              </a>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 
   const question = quizQuestions[currentQuestion];
 
   return (
-    <section id="game" className="py-20 bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-400">
+    <div className="section-padding bg-secondary">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 text-white rounded-full px-6 py-3 mb-6">
-            <Fish className="h-6 w-6" />
+          <div className="inline-flex items-center gap-2 bg-primary text-white rounded-full px-6 py-3 mb-6">
+            <Brain className="h-6 w-6" />
             <span className="font-semibold">Ocean Knowledge Quiz</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Test Your Ocean IQ</h2>
-          <p className="text-xl text-blue-50">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Test Your Ocean IQ</h2>
+          <p className="text-xl text-accent">
             Challenge yourself with ocean trivia and learn fascinating facts about marine life
           </p>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-6">
+        <div className="apple-card overflow-hidden">
+          <div className="bg-primary p-6">
             <div className="flex justify-between items-center text-white">
               <div className="flex items-center gap-2">
                 <Star className="h-5 w-5" />
@@ -172,7 +172,7 @@ export default function Game() {
               </div>
               <span className="font-semibold">Question {currentQuestion + 1} of {quizQuestions.length}</span>
             </div>
-            <div className="mt-4 bg-white bg-opacity-30 rounded-full h-2">
+            <div className="mt-4 bg-white bg-opacity-20 rounded-full h-2">
               <div
                 className="bg-white h-2 rounded-full transition-all duration-300"
                 style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
@@ -181,7 +181,7 @@ export default function Game() {
           </div>
 
           <div className="p-8 md:p-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-8 text-center">
               {question.question}
             </h3>
 
@@ -195,15 +195,15 @@ export default function Game() {
 
                 if (!showResult) {
                   buttonClass += isSelected
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-200 hover:border-blue-300 hover:bg-blue-50";
+                    ? "border-primary bg-secondary"
+                    : "border-border hover:border-primary hover:bg-secondary";
                 } else {
                   if (isCorrect) {
                     buttonClass += "border-green-500 bg-green-50 text-green-900";
                   } else if (isSelected && !isCorrect) {
                     buttonClass += "border-red-500 bg-red-50 text-red-900";
                   } else {
-                    buttonClass += "border-gray-200 opacity-50";
+                    buttonClass += "border-border opacity-70";
                   }
                 }
 
@@ -238,7 +238,7 @@ export default function Game() {
             {showExplanation && (
               <button
                 onClick={nextQuestion}
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl transition-all transform hover:scale-105"
+                className="apple-btn w-full"
               >
                 {currentQuestion < quizQuestions.length - 1 ? "Next Question" : "See Results"}
               </button>
@@ -246,12 +246,12 @@ export default function Game() {
           </div>
         </div>
 
-        <div className="text-center mt-8 text-white">
-          <p className="text-sm opacity-90">
+        <div className="text-center mt-8 text-accent">
+          <p className="text-sm">
             Learn more about ocean conservation and book your next adventure with Marina Travel
           </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
